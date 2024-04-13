@@ -60,3 +60,13 @@ def __adjustImage(imageInput, imageOutput):
   adjustImage = __brightnessContrast(imageBase, -30, 20)
   
   cv2.imwrite(imageOutput, adjustImage)
+
+  #|--------------------------------------------------------->
+    # funcion - simpleBlurImage =>
+def __simpleBlurImage(imageInput, imageOutput):
+  print(' --> Traza: La funcion "simpleBlueImage" esta funcionando...')
+    
+  imageBase = cv2.imread(imageInput)
+  blurredImage = cv2.GaussianBlur(imageBase, (15,15), 0)
+
+  cv2.imwrite(imageOutput, blurredImage)

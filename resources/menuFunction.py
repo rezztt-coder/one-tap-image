@@ -16,10 +16,11 @@ def __helpTable():
   imageTable.add_column("DESCRIPTION")
   imageTable.add_column("EXAMPLE")
     # image table - create rows =>
-  imageTable.add_row("__colorToGray", "Convert a color image to a gray-scale image", "__colorToGray('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
-  imageTable.add_row("__imageToPixelart", "Create a pixelart-image based on a image", "__imageToPixelart('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
-  imageTable.add_row("__pixelsToVectors", "Vectorized a normal image into a vector-image", "__pixelsToVectors('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
-  imageTable.add_row("__adjustImage", "Upgrade the image using the bright and contrast", "__adjustImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("1. __colorToGray", "Convert a color image to a gray-scale image", "__colorToGray('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("2. __imageToPixelart", "Create a pixelart-image based on a image", "__imageToPixelart('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("3. __pixelsToVectors", "Vectorized a normal image into a vector-image", "__pixelsToVectors('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("4. __adjustImage", "Upgrade the image using the bright and contrast", "__adjustImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("5. __simpleBlurImage", "Apply Gaussian Blur ilter to an image", "__simpleBlurImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
   console.print(imageTable)
 
 #|------------------------------------------------------------------------>
@@ -35,7 +36,8 @@ def __selectTable():
   selectionTable.add_row("1", "Convert to Gray Scale > __colorToGray")
   selectionTable.add_row("2", "Create Pixelart > __imageToPixelart")
   selectionTable.add_row("3", "Transform pixel-image to vector-image > __pixelsToVector")
-  selectionTable.add_row("3", "Upgrade the image view > __adjustImage")
+  selectionTable.add_row("4", "Upgrade the image view > __adjustImage")
+  selectionTable.add_row("5", "Applies Gaussian Blur filter > __simpleBlurImage")
   console.print(selectionTable)
 
 #|------------------------------------------------------------------------>
