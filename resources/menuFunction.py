@@ -21,6 +21,7 @@ def __helpTable():
   imageTable.add_row("3. __pixelsToVectors", "Vectorized a normal image into a vector-image", "__pixelsToVectors('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
   imageTable.add_row("4. __adjustImage", "Upgrade the image using the bright and contrast", "__adjustImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
   imageTable.add_row("5. __simpleBlurImage", "Apply Gaussian Blur ilter to an image", "__simpleBlurImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
+  imageTable.add_row("6. __roundImage", "Create a rounded image like profile image", "__roundImage('ruta/imagenInput.png', '/ruta/ImagenOutput.png')")
   console.print(imageTable)
 
 #|------------------------------------------------------------------------>
@@ -38,6 +39,7 @@ def __selectTable():
   selectionTable.add_row("3", "Transform pixel-image to vector-image > __pixelsToVector")
   selectionTable.add_row("4", "Upgrade the image view > __adjustImage")
   selectionTable.add_row("5", "Applies Gaussian Blur filter > __simpleBlurImage")
+  selectionTable.add_row("6", "Create a rounded image like profiles > __roundImage")
   console.print(selectionTable)
 
 #|------------------------------------------------------------------------>

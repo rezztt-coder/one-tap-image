@@ -2,10 +2,10 @@
 import typer
 import cv2
 import os
-from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage, __simpleBlurImage
+from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage, __simpleBlurImage, __roundImage
 from resources.menuFunction import __helpTable, __selectTable
 
-LENGTH_OPTIONS = 5;
+LENGTH_OPTIONS = 6;
 
  # funciones -->
   # funcion - principal =>
@@ -38,6 +38,8 @@ def switch(argument, imageInput):
     __adjustImage(imageInput, 'mod-images/better-image.png')
   elif (argument == 5):
     __simpleBlurImage(imageInput, 'mod-images/blur-image.png')
+  elif (argument == 6):
+    __roundImage(imageInput, 'mod-images/profile-image.png')
 
 #|----------------------------------------------------------------------------------------->
 def __folderExists(folderName):

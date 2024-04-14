@@ -1,5 +1,6 @@
  # librerias -->
 import cv2
+import numpy as np
 
 # /home/rezzt/Imágenes/rzt-images/avatar-images/avatar-11.png
  # funciones -->
@@ -61,8 +62,8 @@ def __adjustImage(imageInput, imageOutput):
   
   cv2.imwrite(imageOutput, adjustImage)
 
-  #|--------------------------------------------------------->
-    # funcion - simpleBlurImage =>
+#|--------------------------------------------------------->
+  # funcion - simpleBlurImage =>
 def __simpleBlurImage(imageInput, imageOutput):
   print(' --> Traza: La funcion "simpleBlueImage" esta funcionando...')
     
@@ -70,3 +71,20 @@ def __simpleBlurImage(imageInput, imageOutput):
   blurredImage = cv2.GaussianBlur(imageBase, (15,15), 0)
 
   cv2.imwrite(imageOutput, blurredImage)
+
+#|--------------------------------------------------------->
+  # funcion - roundImage =>
+def __roundImage(imageInput, imageOutput):
+  print(' --> Traza: La funcion "roundImage" esta funcionando...')
+
+  imageBase = cv2.imread(imageInput)
+  
+  height, width = imageBase.shape[:2]
+  imageCenter = (width // 2, height // 2)
+  imageRadius = min(width, height) // 2
+
+  imageMask = np.zeros((height, width), dtype=np.uint8)
+  cv2.circle(imageMask, imageCenter, imageRadius, 255 , -1)
+  circleImage = cv2.bitwise_and(imageBase, imageBase mask=imageMask)
+
+  cv2.imwrite(imageOutput, circleImage)
