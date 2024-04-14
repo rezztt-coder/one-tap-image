@@ -85,6 +85,6 @@ def __roundImage(imageInput, imageOutput):
 
   imageMask = np.zeros((height, width), dtype=np.uint8)
   cv2.circle(imageMask, imageCenter, imageRadius, 255 , -1)
-  circleImage = cv2.bitwise_and(imageBase, imageBase mask=imageMask)
+  circleImage = cv2.bitwise_and(imageBase, imageBase, mask=imageMask)
 
   cv2.imwrite(imageOutput, circleImage)
