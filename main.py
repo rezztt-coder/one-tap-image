@@ -4,6 +4,7 @@ import cv2
 import os
 from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage, __simpleBlurImage, __roundImage
 from resources.menuFunction import __helpTable, __selectTable
+from resources.formatFunctions import __compressImage, __changeFormat, __webOptimizer
 
 LENGTH_OPTIONS = 6;
 

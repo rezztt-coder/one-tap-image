@@ -88,3 +88,18 @@ def __roundImage(imageInput, imageOutput):
   circleImage = cv2.bitwise_and(imageBase, imageBase, mask=imageMask)
 
   cv2.imwrite(imageOutput, circleImage)
+
+#|--------------------------------------------------------->
+  # funcion - rotateImage =>
+def __rotateImage(imageInput, imageOutput):
+  print(' --> Traza: La funcion "rotateImage" esta funcionando...')
+
+#|--------------------------------------------------------->
+  # funcion - noiseFilter =>
+def __noiseFilter(imageInput, imageOutput):
+  print(' --> Traza: La funcion "noiseFilter" esta funcionando...')
+
+#|--------------------------------------------------------->
+  # funcion - copyrightImage =>
+def __copyrightImage(imageInput, imageOutput):
+  print(' --> Traza: La funcion "copyrightImage" esta funcionando...')
