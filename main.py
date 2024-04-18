@@ -2,11 +2,12 @@
 import typer
 import cv2
 import os
-from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage, __simpleBlurImage, __roundImage
+from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage
+from resources.imageFunctions import __simpleBlurImage, __roundImage, __noiseFilter, __copyrightImage
 from resources.menuFunction import __helpTable, __selectTable
 from resources.formatFunctions import __compressImage, __changeFormat, __webOptimizer
 
-LENGTH_OPTIONS = 6;
+LENGTH_OPTIONS = 7;
 
  # funciones -->
   # funcion - principal =>
@@ -41,6 +42,8 @@ def switch(argument, imageInput):
     __simpleBlurImage(imageInput, 'mod-images/blur-image.png')
   elif (argument == 6):
     __roundImage(imageInput, 'mod-images/profile-image.png')
+  elif (argument == 7):
+    __copyrightImage(imageInput, 'mod-images/copyright-image.png', 'marca-prueba')
 
 #|----------------------------------------------------------------------------------------->
 def __folderExists(folderName):

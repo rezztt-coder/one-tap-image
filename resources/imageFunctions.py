@@ -18,7 +18,7 @@ def __imageToPixelart(imageInput, imageOutput):
   print(' --> Traza: La funcion "imageToPixelart" esta funcionando...')
 
   imageBase = cv2.imread(imageInput)
-  pixelFactor = 10
+  pixelFactor = 6
   newHeight, newWidth = imageBase.shape[:2]
 
   imagePixel = cv2.resize(imageBase, (newWidth // pixelFactor, newHeight // pixelFactor), interpolation=cv2.INTER_NEAREST)
@@ -98,8 +98,29 @@ def __rotateImage(imageInput, imageOutput):
   # funcion - noiseFilter =>
 def __noiseFilter(imageInput, imageOutput):
   print(' --> Traza: La funcion "noiseFilter" esta funcionando...')
+  imageBase = cv2.imread(imageInput)
+
+  mean = 0
+  stddev = 0.5
+
+  noiseFilter = np.random.normal(mean, stddev, imageBase.shape).astype(np.uint8)
+  noiseImage = cv2.add(imageBase, noiseFilter)
+
+  cv2.imwrite(imageOutput, noiseImage)
 
 #|--------------------------------------------------------->
   # funcion - copyrightImage =>
-def __copyrightImage(imageInput, imageOutput):
+def __copyrightImage(imageInput, imageOutput, textInput):
   print(' --> Traza: La funcion "copyrightImage" esta funcionando...')
+  imageBase = cv2.imread(imageInput)
+  
+  waterMark = textInput
+  fontMark = cv2.FONT_HERSHEY_COMPLEX
+  fontScale = 1
+  fontThickness = 2
+
+  textColor = (255, 255, 255, 30)
+  textPosition = (50, 50)
+
+  cv2.putText(imageBase, waterMark, textPosition, fontMark, fontScale, textColor, fontThickness)
+  cv2.imwrite(imageOutput, imageBase)
