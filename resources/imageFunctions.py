@@ -119,7 +119,7 @@ def __copyrightImage(imageInput, imageOutput, textInput):
   fontScale = 1
   fontThickness = 2
 
-  textColor = (255, 255, 255, 30)
+  textColor = (255, 255, 255, 100)
   textPosition = (50, 50)
 
   cv2.putText(imageBase, waterMark, textPosition, fontMark, fontScale, textColor, fontThickness)

@@ -3,11 +3,11 @@ import typer
 import cv2
 import os
 from resources.imageFunctions import __colorToGray, __imageToPixelart, __pixelsToVectors, __adjustImage
-from resources.imageFunctions import __simpleBlurImage, __roundImage, __noiseFilter, __copyrightImage
+from resources.imageFunctions import __simpleBlurImage, __roundImage, __noiseFilter, __copyrightImage, __rotateImage
 from resources.menuFunction import __helpTable, __selectTable
 from resources.formatFunctions import __compressImage, __changeFormat, __webOptimizer
 
-LENGTH_OPTIONS = 7;
+LENGTH_OPTIONS = 9;
 
  # funciones -->
   # funcion - principal =>
@@ -43,6 +43,10 @@ def switch(argument, imageInput):
   elif (argument == 6):
     __roundImage(imageInput, 'mod-images/profile-image.png')
   elif (argument == 7):
+    __rotateImage(imageInput, 'mod-images/rotate-image.png')
+  elif (argument == 8):
+    __noiseFilter(imageInput, 'mod-images/noisy-image.png')
+  elif (argument == 9):
     __copyrightImage(imageInput, 'mod-images/copyright-image.png', 'marca-prueba')
 
 #|----------------------------------------------------------------------------------------->
